@@ -74,7 +74,7 @@ cp .env.example .env
 # Renseigner : VERTEX_PROJECT=your-gcp-project-id
 
 # 3. Services (PostgreSQL + Langfuse)
-docker-compose up -d
+docker compose up -d
 
 # 4. Dépendances Python
 uv sync
@@ -116,7 +116,7 @@ uv run python src/agent/cli.py --mode langgraph # Mode LangGraph
 
 ```
 bforbank-agent/
-├── docker-compose.yaml
+├── docker compose.yaml
 ├── data/
 │   ├── procedures/              # Procédures BforBank en Markdown
 │   └── mock/
@@ -195,5 +195,5 @@ uv run python src/indexer/retriever.py "remboursement frais bancaires"
 docker exec -it bforbank_db psql -U bforbank -d bforbank
 
 # Reset complet
-docker-compose down -v && docker-compose up -d && uv run python src/indexer/indexer.py
+docker compose down -v && docker compose up -d && uv run python src/indexer/indexer.py
 ```
