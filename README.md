@@ -193,6 +193,7 @@ uv run python src/indexer/retriever.py "remboursement frais bancaires"
 
 # Accéder à la base
 docker exec -it bforbank_db psql -U bforbank -d bforbank
+\dt
 
 # Reset complet
 docker compose down -v && docker compose up -d && uv run python src/indexer/indexer.py
